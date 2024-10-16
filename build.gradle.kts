@@ -1,16 +1,13 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-val kotlinVersion = "2.0.20"
+val kotlinVersion = "2.0.21"
 val logbackVersion = "1.4.14"
-val ktorVersion = "3.0.0-rc-1"
-
-// override dependencies
-val commonsCodecVersion = "1.17.1"
+val ktorVersion = "3.0.0"
 
 val javaVersion = JvmTarget.JVM_21
 
 plugins {
-    kotlin("jvm") version "2.0.20"
+    kotlin("jvm") version "2.0.21"
     id("application")
 }
 
@@ -37,11 +34,6 @@ dependencies {
     implementation("io.ktor:ktor-server-config-yaml:$ktorVersion")
 
     testImplementation("io.ktor:ktor-server-test-host-jvm:$ktorVersion")
-    constraints {
-        testImplementation("commons-codec:commons-codec:$commonsCodecVersion") {
-            because("override transient from io.ktor:ktor-server-test-host-jvm")
-        }
-    }
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 }
 
