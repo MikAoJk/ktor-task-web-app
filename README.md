@@ -21,7 +21,7 @@ java -version
 ./gradlew run
 ```
 
-### Enndpont
+### Endpoint
 Go to http://0.0.0.0:8080/tasks or http://localhost:8080/static/index.html
 
 
